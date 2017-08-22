@@ -9,6 +9,7 @@
     "flow:stop": "flow stop",
     "flow": "flow; test $? -eq 0 -o $? -eq 2",
     "lint": "eslint src/",
+    "preinstall": "npm run build",
     "prepublish": "npm run lint && npm run flow && npm run test && npm run build",
     "test": "jest",
     "test:watch": "jest --watch",
@@ -28,15 +29,6 @@
   },
   "homepage": "https://github.com/jevakallio/redux-offline#readme",
   "devDependencies": {
-    "babel-cli": "^6.18.0",
-    "babel-core": "^6.18.2",
-    "babel-eslint": "^7.1.1",
-    "babel-loader": "^6.2.8",
-    "babel-plugin-transform-class-properties": "^6.19.0",
-    "babel-plugin-transform-flow-strip-types": "^6.18.0",
-    "babel-plugin-transform-object-rest-spread": "^6.19.0",
-    "babel-preset-latest": "^6.16.0",
-    "babel-preset-react": "^6.16.0",
     "eslint": "^3.17.1",
     "eslint-config-formidable": "^2.0.1",
     "eslint-plugin-babel": "^4.1.1",
@@ -49,6 +41,15 @@
     "redux-logger": "^2.8.2"
   },
   "dependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-core": "^6.18.2",
+    "babel-eslint": "^7.1.1",
+    "babel-loader": "^6.2.8",
+    "babel-plugin-transform-class-properties": "^6.19.0",
+    "babel-plugin-transform-flow-strip-types": "^6.18.0",
+    "babel-plugin-transform-object-rest-spread": "^6.19.0",
+    "babel-preset-latest": "^6.16.0",
+    "babel-preset-react": "^6.16.0",
     "redux-persist": "^4.5.0"
   },
   "peerDependencies": {
