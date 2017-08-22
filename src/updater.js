@@ -57,7 +57,11 @@ const offlineUpdater = function offlineUpdater(
   }
 
   if (action.type === PERSIST_REHYDRATE) {
-    return { ...state, ...action.payload.offline, online: state.online, busy: false };
+    return {
+      ...state,
+      busy: false,
+      outbox: action.payload.offline ? action.payload.offline.outbox : state.outbox
+    };
   }
 
   if (action.type === OFFLINE_SCHEDULE_RETRY) {
